@@ -1,0 +1,184 @@
+/* Header row inside result panel (title + copy button) */
+.result-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Override center-align since we now have a row */
+.result-title {
+  text-align: left;
+  font-size: larger;
+}
+
+/* Copy button */
+.copy-btn {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.copy-btn:hover {
+  background: #e2e8f0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+.copy-btn:active {
+  transform: translateY(0px);
+  box-shadow: none;
+}
+
+
+
+
+/* ===========================
+   RESULT PANEL (Home.jsx + ResultPanel.jsx)
+   =========================== */
+
+.result-panel {
+  max-width: 1100px;
+  margin: 30px auto 0 auto;
+  margin-bottom: 150px;
+  padding: 18px;
+  border-radius: 16px;
+  background: radial-gradient(circle at top left, rgba(33, 89, 211, 0.06), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.06), transparent 55%);
+  border: 1px solid #e0e7ff;
+}
+
+.result-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: #0b1220;
+}
+
+/* Main card inside the panel */
+.result-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 16px 14px 16px;
+  border: 1px solid #e5edff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  font-size: 14px;
+}
+
+/* Error state */
+.result-box.error {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #7f1d1d;
+}
+
+/* Loading text style if shown inside result-box */
+.result-box .muted {
+  font-style: italic;
+}
+
+/* Grid for invoice key/value pairs */
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 16px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 880px) {
+  .result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.result-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.result-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+}
+
+.result-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+/* Subtitle (Line items heading) */
+.sub-title {
+  margin: 8px 0 6px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Line items table */
+.line-table {
+  margin-top: 4px;
+  border-radius: 10px;
+  border: 1px solid #e5edff;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.line-head,
+.line-row {
+  display: grid;
+  grid-template-columns: 2fr 0.8fr 1fr 1fr;
+  gap: 8px;
+  padding: 8px 10px;
+}
+
+.line-head {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5edff;
+}
+
+.line-row:nth-child(even) {
+  background: #f9fbff;
+}
+
+.line-row:nth-child(odd) {
+  background: #ffffff;
+}
+
+.line-row span {
+  word-break: break-word;
+}
+
+/* General text output (for general PDF mode) */
+.result-text {
+  max-height: 260px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  padding-right: 4px;
+}
+
+/* Utility */
+.muted {
+  color: #6b7280;
+}

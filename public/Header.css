@@ -1,0 +1,140 @@
+/* Glassmorphism header container */
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* Soft shadow */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Layout */
+.nav-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 16px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO STYLING */
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.logo:hover {
+  transform: scale(1.04);
+}
+
+.logo-main {
+  color: #111827;
+}
+
+.logo-accent {
+  color: #3b82f6;
+  margin-left: 2px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 15px;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+/* Beautiful hover underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  transition: width 0.25s ease;
+  border-radius: 10px;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* LOGIN BUTTON (Glow Effect) */
+.login-btn {
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  border: 1px solid #2563eb;
+  color: #2563eb !important;
+  transition: 0.25s ease;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  background: #2563eb;
+  color: white !important;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+}
+
+
+
+
+
+
+
+
+
+/*.headerdiv{
+  height: 110px;
+  width:100%;
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerinnerdiv1{
+  height: 90px;
+  width:450px;
+  border: 1px solid black;
+  margin-left: 30px;
+}
+
+.headerinnerdiv2{
+  height:90px;
+  width: 250px;
+  border: 1px solid black;
+  margin-right: 30px;
+}
+*/

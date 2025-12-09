@@ -1,0 +1,47 @@
+/* Pages shared layout */
+.page-root { padding: 20px 0 60px; }
+.page-container { max-width: 1100px; margin: 0 auto; padding: 0 18px; }
+
+.page-title { font-size: 28px; margin: 6px 0 10px; color: #0b1220; }
+.lead { color:#475569; margin-bottom:18px; font-size:15px; }
+
+/* About cards */
+.about-cards { display:flex; gap:16px; margin:20px 0 8px; }
+.about-card { flex:1; background:white; border-radius:10px; padding:16px; border:1px solid #eef2ff; box-shadow:0 8px 24px rgba(2,6,23,0.03); }
+.about-card h3 { margin:0 0 6px; }
+.mission { margin-top:18px; background:linear-gradient(90deg,#ffffff,#fbfdff); padding:14px; border-radius:10px; border:1px solid #eef2ff; }
+
+/* Team */
+.team { margin-top:18px; }
+.team-row { display:flex; gap:12px; margin-top:8px; }
+.team-card { display:flex; gap:12px; align-items:center; background:white; padding:10px; border-radius:10px; border:1px solid #eef2ff; }
+.avatar { width:46px; height:46px; border-radius:10px; background:linear-gradient(135deg,#2563eb,#7c3aed); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; }
+
+/* Contact layout */
+.contact-grid { display:grid; grid-template-columns: 1fr 320px; gap:18px; align-items:start; }
+@media (max-width:980px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.contact-card { background:white; padding:18px; border-radius:12px; border:1px solid #eef2ff; }
+.contact-info { background:white; padding:18px; border-radius:12px; border:1px solid #eef2ff; height:100%; }
+
+.contact-form .label { font-size:13px; color:#374151; margin-top:10px; display:block; }
+.input, .textarea {
+  width:100%;
+  padding:10px 12px;
+  border:1px solid #e6edf8;
+  border-radius:8px;
+  margin-top:6px;
+  font-size:14px;
+}
+.contact-actions { display:flex; gap:10px; margin-top:12px; align-items:center; }
+.small-note { color:#6b7280; margin-top:10px; font-size:13px; }
+
+.info-block { margin-bottom:14px; }
+.info-block h4 { margin:0 0 6px; }
+.social-row a { display:inline-block; margin-right:8px; color:#2563eb; text-decoration:none; }
+
+/* buttons (re-use existing styles if present) */
+.btn { padding:10px 12px; background:linear-gradient(90deg,#2563eb,#3b82f6); color:white; border:none; border-radius:8px; cursor:pointer; font-weight:600; text-decoration:none; display:inline-block; }
+.btn-outline { background:white; border:1px solid #dbeafe; color:#2563eb; text-decoration:none; padding:10px 12px; border-radius:8px; }
+.muted { color:#6b7280; }
+
