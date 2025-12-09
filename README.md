@@ -1,16 +1,132 @@
-# React + Vite
+# Scan-AI 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Scan-AI is a full-stack web application that enables intelligent extraction and analysis of PDFs.
+It is designed to handle **invoice PDFs** as well as **general PDFs**, powered by Google’s Gemini API.
 
-Currently, two official plugins are available:
+The system provides structured invoice extraction, document summaries, Q&A, and custom instructions
+through a clean React frontend and a secure Node.js backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📄 Invoice PDF
 
-## Expanding the ESLint configuration
+- Extracts structured invoice data:
+  - Invoice number
+  - Invoice & due dates
+  - Seller & buyer details
+  - Currency
+  - Net, tax, and gross totals
+  - Line items (description, quantity, price)
+- AI-powered extraction using Gemini 2.5 Flash
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📑 General PDF
+
+- Summarize documents
+- Extract headings & sections
+- Ask questions (Q&A)
+- Provide custom instructions for extraction
+
+### 🔐 Authentication
+
+- Simple login system (name + email)
+- User stored in PostgreSQL
+- User shown in UI header after login
+
+### 🧠 AI & Security
+
+- Gemini API key handled only in backend
+- No secrets exposed to frontend
+- Files processed securely via backend
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+
+- React (Vite)
+- Axios
+- CSS (custom styling)
+
+**Backend**
+
+- Node.js
+- Express.js
+- Multer (in-memory file uploads)
+- Gemini 2.5 Flash API
+
+**Database**
+
+- PostgreSQL (for authentication)
+
+---
+
+## 📂 Project Structure
+
+scan-ai/
+├── frontend/
+│ ├── src/
+│ │ ├── Home.jsx
+│ │ ├── ResultPanel.jsx
+│ │ ├── Login.jsx
+│ │ ├── Header.jsx
+│ │ └── styles.css
+│ ├── package.json
+│ └── vite.config.js
+│
+├── backend/
+│ ├── Server.js
+│ ├── package.json
+│ ├── .env.example
+│
+├── README.md
+└── .gitignore
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/ashie188/scan-ai.git
+cd scan-ai
+
+2️⃣ Backend Setup
+cd backend
+npm install
+
+
+Create .env file:
+GEMINI_API_KEY=your_gemini_api_key_here
+
+
+Run backend:
+node Server.js
+
+3️⃣ Frontend Setup
+cd frontend
+npm install
+npm run dev
+
+🔁 API Routes
+Invoice Extraction
+POST /post/invoice
+Content-Type: multipart/form-data
+Body:
+- file: PDF
+
+🧪 Usage Flow
+Login with name & email
+Choose Invoice PDF or General PDF
+Upload PDF
+Select action (if General PDF)
+
+
+
+
+
+
+```
